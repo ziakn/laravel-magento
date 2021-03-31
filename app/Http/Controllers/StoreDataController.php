@@ -4,81 +4,63 @@ namespace App\Http\Controllers;
 
 use App\Models\StoreData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StoreDataController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $data=StoreData::get();
+
+        return view('pages.list',compact('data'));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+       
+            $flag ="error";
+            $data=StoreData::create(
+                [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'mobile' => $request->mobile,
+                    'address' => $request->address,
+                ]
+            );
+            if($data)
+            {
+                $flag = "success";
+            }
+            return redirect()->back()->with( $flag, ''); 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\StoreData  $storeData
-     * @return \Illuminate\Http\Response
-     */
-    public function show(StoreData $storeData)
+    
+    public function show($id)
+    {
+        
+    }
+
+  
+    public function edit($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\StoreData  $storeData
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(StoreData $storeData)
+   
+    public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StoreData  $storeData
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, StoreData $storeData)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\StoreData  $storeData
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(StoreData $storeData)
+    
+    public function destroy($id)
     {
         //
     }

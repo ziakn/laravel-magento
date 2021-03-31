@@ -15,7 +15,7 @@
              <ul class="menu">
                  <li class="sidebar-title">Menu</li>
 
-                 <li class="sidebar-item active ">
+                 <li class="sidebar-item {{ request()->is('dashboard')?"active":""}} ">
                      <a href="index.html" class='sidebar-link'>
                          <i class="bi bi-grid-fill"></i>
                          <span>Dashboard</span>
@@ -26,8 +26,8 @@
                  <li class="sidebar-title">Forms &amp; Tables</li>
 
 
-                 <li class="sidebar-item  ">
-                     <a href="form-layout.html" class='sidebar-link'>
+                 <li class="sidebar-item  {{ request()->is('create-data')?"active":""}}">
+                     <a href="{{ url('create-data') }}" class="sidebar-link ">
                          <i class="bi bi-file-earmark-medical-fill"></i>
                          <span>Add Data</span>
                      </a>
@@ -35,8 +35,8 @@
 
 
 
-                 <li class="sidebar-item  ">
-                     <a href="table.html" class='sidebar-link'>
+                 <li class="sidebar-item  {{ request()->is('/list-data')?"active":""}}">
+                     <a href="{{ url('list-data') }}" class='sidebar-link '>
                          <i class="bi bi-grid-1x2-fill"></i>
                          <span>List Data</span>
                      </a>
