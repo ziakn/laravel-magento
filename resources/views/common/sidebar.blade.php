@@ -29,7 +29,7 @@
                  <li class="sidebar-item  ">
                      <a href="form-layout.html" class='sidebar-link'>
                          <i class="bi bi-file-earmark-medical-fill"></i>
-                         <span>Add Date</span>
+                         <span>Add Data</span>
                      </a>
                  </li>
 
@@ -45,7 +45,7 @@
 
                  <li class="sidebar-item  ">
                      <a href="{{ url('logout-user') }}" class='sidebar-link'>
-                         <i class="bi bi-grid-1x2-fill"></i>
+                         <i class="bi bi-box-arrow-right"></i>
                          <span>Log Out</span>
                      </a>
                  </li>
