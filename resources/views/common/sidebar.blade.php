@@ -44,7 +44,7 @@
 
 
                  <li class="sidebar-item  ">
-                     <a href="table.html" class='sidebar-link'>
+                     <a href="{{ url('logout-user') }}" class='sidebar-link'>
                          <i class="bi bi-grid-1x2-fill"></i>
                          <span>Log Out</span>
                      </a>
