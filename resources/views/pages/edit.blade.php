@@ -3,7 +3,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Basic Inputs</h4>
+                <h4 class="card-title">Edit Data</h4>
             </div>
 
             <div class="card-body">
@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label for="basicInput">Address</label>
                                 <textarea type="text" class="form-control" id="basicInput" name="address"  value="{{ $data->address }}"
-                                    placeholder="Enter Address"></textarea>
+                                    placeholder="Enter Address">{{ $data->address }}</textarea>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>

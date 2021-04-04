@@ -5,7 +5,7 @@
                         <div class="col-12 col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Table with outer spacing</h4>
+                                    <h4 class="card-title">List Data</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
