@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ url('update-data') }}" method="POST">
+                        <form action="{{ url('update-data') }}" method="POST" enctype="multipart/form-data">
                             @if (\Session::has('success'))
                                 <div class="alert alert-success alert-dismissible show fade">
                                     Data Successfully Added.
@@ -45,6 +45,16 @@
                                 <label for="basicInput">Address</label>
                                 <textarea type="text" class="form-control" id="basicInput" name="address"  value="{{ $data->address }}"
                                     placeholder="Enter Address">{{ $data->address }}</textarea>
+                            </div>
+                            <input type="hidden" name="myFile" value="{{ $data->myFile}}"/>
+                              <div class="form-group">
+                                                <label for="formFile" class="form-label">Image</label>
+                                                <input class="form-control" type="file" name="myNewFile" id="formFile">
+                            </div>
+                            <div class="form-group">
+                                <div class="avatar bg-rgba-primary m-0 me-50">
+                                 <img src="{{ $data->myFile?$data->myFile:'/assets/images/faces/3.jpg' }}" alt="" srcset="">
+                                </div>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>

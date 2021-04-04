@@ -26,12 +26,15 @@ class StoreDataController extends Controller
     {
        
             $flag ="error";
+            $request->file('myFile')->store('public/uploads/avatar');
+            $pic= '/storage/uploads/avatar/'.$request->myFile->hashName();   
             $data=StoreData::create(
                 [
                     'name' => $request->name,
                     'email' => $request->email,
                     'mobile' => $request->mobile,
                     'address' => $request->address,
+                    'myFile' => $pic,
                 ]
             );
             if($data)
@@ -57,13 +60,20 @@ class StoreDataController extends Controller
    
     public function update(Request $request)
     {
-           
+            $pic=$request->myFile;
+            if($request->myNewFile)
+            {
+                 $request->file('myNewFile')->store('public/uploads/avatar');
+                $pic= '/storage/uploads/avatar/'.$request->myNewFile->hashName(); 
+            }
+             
             StoreData::where('id',$request->id)->update(
                 [
                     'name' => $request->name,
                     'email' => $request->email,
                     'mobile' => $request->mobile,
                     'address' => $request->address,
+                    'myFile' => $pic,
                 ]
             );
           

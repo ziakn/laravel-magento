@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ url('store-data') }}" method="POST">
+                        <form action="{{ url('store-data') }}" method="POST" enctype="multipart/form-data">
                             @if (\Session::has('success'))
                                 <div class="alert alert-success alert-dismissible show fade">
                                     Data Successfully Added.
@@ -44,6 +44,10 @@
                                 <label for="basicInput">Address</label>
                                 <textarea type="text" class="form-control" id="basicInput" name="address"
                                     placeholder="Enter Address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Image</label>
+                                                <input class="form-control" type="file" name="myFile" id="formFile">
                             </div>
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>

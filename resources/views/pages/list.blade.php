@@ -14,6 +14,8 @@
                                             <table class="table table-lg">
                                                 <thead>
                                                     <tr>
+                                                        <th>ID</th>
+                                                        <th>Image</th>
                                                         <th>NAME</th>
                                                         <th>Email</th>
                                                         <th>Mobile</th>
@@ -24,6 +26,10 @@
                                                 <tbody>
                                                     @foreach($data as $key => $item)
                                                     <tr>
+                                                        <td>{{ $item->id }}</td>
+                                                        <td>   <div class="avatar bg-rgba-primary m-0 me-50">
+                                                        <img src="{{ $item->myFile?$item->myFile:'/assets/images/faces/3.jpg' }}" alt="" srcset="">
+                                                    </div></td>
                                                         <td class="text-bold-500">{{ $item->name }}</td>
                                                         <td>{{ $item->email }}</td>
                                                         <td class="text-bold-500">{{ $item->mobile }}</td>

@@ -18,6 +18,7 @@ class CreateStoreDataTable extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->nullable();
+            $table->string('myFile')->nullable();
             $table->string('address')->nullable();
             $table->timestamps();
         });
