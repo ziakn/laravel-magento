@@ -7,7 +7,7 @@
                      <p>{{ auth()->user()->name }}</p>
                  </div>
                  <div class="toggler">
-                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                     <a href="{{ url('dashboard') }}" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                  </div>
              </div>
          </div>
@@ -16,7 +16,7 @@
                  <li class="sidebar-title">Menu</li>
 
                  <li class="sidebar-item {{ request()->is('dashboard')?"active":""}} ">
-                     <a href="index.html" class='sidebar-link'>
+                     <a href="{{ url('dashboard') }}" class='sidebar-link'>
                          <i class="bi bi-grid-fill"></i>
                          <span>Dashboard</span>
                      </a>
@@ -35,7 +35,7 @@
 
 
 
-                 <li class="sidebar-item  {{ request()->is('/list-data')?"active":""}}">
+                 <li class="sidebar-item  {{ request()->is('list-data')?"active":""}}">
                      <a href="{{ url('list-data') }}" class='sidebar-link '>
                          <i class="bi bi-grid-1x2-fill"></i>
                          <span>List Data</span>
