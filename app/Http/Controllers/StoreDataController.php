@@ -44,7 +44,8 @@ class StoreDataController extends Controller
     
     public function show($id)
     {
-        
+         $data=StoreData::find($id);
+         return view('pages.edit',compact('data'));
     }
 
   
@@ -54,14 +55,25 @@ class StoreDataController extends Controller
     }
 
    
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+           
+            StoreData::where('id',$request->id)->update(
+                [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'mobile' => $request->mobile,
+                    'address' => $request->address,
+                ]
+            );
+          
+       return $this->index();
     }
 
     
     public function destroy($id)
     {
-        //
+        StoreData::where('id',$id)->delete();
+       return $this->index();
     }
 }
