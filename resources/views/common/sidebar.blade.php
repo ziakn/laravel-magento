@@ -42,6 +42,22 @@
                      </a>
                  </li>
 
+                <li class="sidebar-item  {{ request()->is('create-user')?"active":""}}">
+                     <a href="{{ url('create-user') }}" class="sidebar-link ">
+                         <i class="bi bi-file-earmark-medical-fill"></i>
+                         <span>Add User</span>
+                     </a>
+                 </li>
+
+
+
+                 <li class="sidebar-item  {{ request()->is('list-user')?"active":""}}">
+                     <a href="{{ url('list-user') }}" class='sidebar-link '>
+                         <i class="bi bi-grid-1x2-fill"></i>
+                         <span>List User</span>
+                     </a>
+                 </li>
+
 
                  <li class="sidebar-item  ">
                      <a href="{{ url('logout-user') }}" class='sidebar-link'>
