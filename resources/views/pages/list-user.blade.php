@@ -27,12 +27,16 @@
                                                         <td class="text-bold-500">{{ $item->name }}</td>
                                                         <td>{{ $item->email }}</td>
                                                         <td class="text-bold-500">
+                                                        @can('user-edit')
                                                         <a href="{{ url('edit-password') }}"><i class="bi bi-lock"></i></a>
+                                                        @endcan
                                                         &nbsp&nbsp&nbsp
                                                         <a href="{{ url('edit-user', $item->id) }}"><i class="bi bi-pencil"></i></a>&nbsp&nbsp&nbsp
+                                                        @can('user-delete')
                                                         @if($item->id != 1) 
                                                         <a href="{{ url('delete-user', $item->id) }}"><i class="bi bi-trash"></i></a></td>
                                                         @endif
+                                                        @endcan
                                                     </tr>
                                                     @endforeach
                                                     

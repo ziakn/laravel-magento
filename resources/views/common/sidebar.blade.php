@@ -25,36 +25,48 @@
 
                  <li class="sidebar-title">Forms &amp; Tables</li>
 
-
+                @can('storedata-create')
                  <li class="sidebar-item  {{ request()->is('create-data')?"active":""}}">
                      <a href="{{ url('create-data') }}" class="sidebar-link ">
                          <i class="bi bi-file-earmark-medical-fill"></i>
                          <span>Add Data</span>
                      </a>
                  </li>
+                @endcan
 
 
-
+                @can('storedata-list')
                  <li class="sidebar-item  {{ request()->is('list-data')?"active":""}}">
                      <a href="{{ url('list-data') }}" class='sidebar-link '>
                          <i class="bi bi-grid-1x2-fill"></i>
                          <span>List Data</span>
                      </a>
                  </li>
+                @endcan
 
+
+                @can('user-create')
                 <li class="sidebar-item  {{ request()->is('create-user')?"active":""}}">
                      <a href="{{ url('create-user') }}" class="sidebar-link ">
                          <i class="bi bi-file-earmark-medical-fill"></i>
                          <span>Add User</span>
                      </a>
                  </li>
+                 @endcan
 
 
-
+                  @can('user-list')
                  <li class="sidebar-item  {{ request()->is('list-user')?"active":""}}">
                      <a href="{{ url('list-user') }}" class='sidebar-link '>
                          <i class="bi bi-grid-1x2-fill"></i>
                          <span>List User</span>
+                     </a>
+                 </li>
+                  @endcan
+                <li class="sidebar-item  {{ request()->is('roles')?"active":""}}">
+                     <a href="{{ url('roles') }}" class='sidebar-link '>
+                         <i class="bi bi-grid-1x2-fill"></i>
+                         <span>Manage Role</span>
                      </a>
                  </li>
 

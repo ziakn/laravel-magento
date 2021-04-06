@@ -49,9 +49,11 @@
                                                 <label for="formFile" class="form-label">Image</label>
                                                 <input class="form-control" type="file" name="myFile" id="formFile">
                             </div>
+                             @can('storedata-create')
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                             </div>
+                            @endcan
                         </form>
                     </div>
 

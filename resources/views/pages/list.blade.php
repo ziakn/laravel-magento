@@ -34,7 +34,14 @@
                                                         <td>{{ $item->email }}</td>
                                                         <td class="text-bold-500">{{ $item->mobile }}</td>
                                                         <td class="text-bold-500">{{ $item->address }}</td>
-                                                        <td class="text-bold-500"><a href="{{ url('edit-data', $item->id) }}"><i class="bi bi-pencil"></i></a>&nbsp&nbsp&nbsp<a href="{{ url('delete-data', $item->id) }}"><i class="bi bi-trash"></i></a></td>
+                                                        <td class="text-bold-500">
+                                                          @can('storedata-edit')
+                                                        <a href="{{ url('edit-data', $item->id) }}"><i class="bi bi-pencil"></i></a>
+                                                         @endcan 
+                                                        @can('storedata-delete')
+                                                         &nbsp&nbsp&nbsp
+                                                        <a href="{{ url('delete-data', $item->id) }}"><i class="bi bi-trash"></i></a></td>
+                                                         @endcan 
                                                     </tr>
                                                     @endforeach
                                                     

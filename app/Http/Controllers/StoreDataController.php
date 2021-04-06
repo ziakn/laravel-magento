@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\Validator;
 
 class StoreDataController extends Controller
 {
-    
+    function __construct()
+    {
+         $this->middleware('permission:storedata-list|storedata-create|storedata-edit|storedata-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:storedata-create', ['only' => ['create','store']]);
+         $this->middleware('permission:storedata-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:storedata-delete', ['only' => ['destroy']]);
+    }
     public function index()
     {
         $data=StoreData::get();

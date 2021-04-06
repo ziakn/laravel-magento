@@ -56,9 +56,11 @@
                                  <img src="{{ $data->myFile?$data->myFile:'/assets/images/faces/3.jpg' }}" alt="" srcset="">
                                 </div>
                             </div>
+                            @can('storedata-edit')
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                             </div>
+                            @endcan
                         </form>
                     </div>
 
