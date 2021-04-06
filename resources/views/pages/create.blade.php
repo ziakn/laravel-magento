@@ -42,8 +42,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="basicInput">Address</label>
-                                <textarea type="text" class="form-control" id="basicInput" name="address"
-                                    placeholder="Enter Address"></textarea>
+                                <textarea type="text" class=" ckeditor form-control" id="basicInput" name="address"
+                                    placeholder="Enter Address"></textarea> 
                             </div>
                             <div class="form-group">
                                                 <label for="formFile" class="form-label">Image</label>
@@ -64,3 +64,9 @@
 
 
 @stop
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>

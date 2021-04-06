@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="basicInput">Address</label>
-                                <textarea type="text" class="form-control" id="basicInput" name="address"  value="{{ $data->address }}"
+                                <textarea type="text" class="ckeditor form-control" id="basicInput" name="address"  value="{{ $data->address }}"
                                     placeholder="Enter Address">{{ $data->address }}</textarea>
                             </div>
                             <input type="hidden" name="myFile" value="{{ $data->myFile}}"/>
@@ -71,3 +71,9 @@
 
 
 @stop
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
