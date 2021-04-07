@@ -33,7 +33,7 @@
                                                         <td class="text-bold-500">{{ $item->name }}</td>
                                                         <td>{{ $item->email }}</td>
                                                         <td class="text-bold-500">{{ $item->mobile }}</td>
-                                                        <td class="text-bold-500">{{ $item->address }}</td>
+                                                        <td class="text-bold-500">{{  Str::limit(strip_tags($item->address),15)  }}</td>
                                                         <td class="text-bold-500">
                                                           @can('storedata-edit')
                                                         <a href="{{ url('edit-data', $item->id) }}"><i class="bi bi-pencil"></i></a>

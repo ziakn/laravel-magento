@@ -19,13 +19,13 @@ class StoreDataController extends Controller
     {
         $data=StoreData::get();
 
-        return view('pages.list',compact('data'));
+        return view('store.list',compact('data'));
 
     }
 
     public function create()
     {
-        return view('pages.create');
+        return view('store.create');
     }
 
     public function store(Request $request)
@@ -54,7 +54,7 @@ class StoreDataController extends Controller
     public function show($id)
     {
          $data=StoreData::find($id);
-         return view('pages.edit',compact('data'));
+         return view('store.edit',compact('data'));
     }
 
   
