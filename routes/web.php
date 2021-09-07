@@ -16,6 +16,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::group(['middleware'=>'HtmlMinifier'], function(){
+
 
 Route::group(['middleware' => ['auth']], function() {
 Route::get('/logout-user', [UserController::class, 'logout']);
@@ -39,6 +41,7 @@ Route::post('/change-password', [UserController::class, 'changePassword']);
 });
 
 
+});
 
 
 
